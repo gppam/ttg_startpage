@@ -1,0 +1,98 @@
+@font-face	{
+	font-family: "robotoslab";
+	src: url("RobotoSlab-Regular.ttf");
+}
+
+body	{
+	font-family: "robotoslab";
+}
+
+#contain	{
+	display:table;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+}
+
+#pic	{
+	width: 360;
+	float:left;
+}
+
+.piccy	{
+	padding-top:10%;
+	margin-left: 50px;
+}
+
+#linkbox	{
+	margin-top:30px;
+	width: 600px;
+	float: right;
+}
+
+#txt	{
+	font-size: 80px;
+}
+
+#date	{
+	margin-top:-20px;
+	font-size: 30px;
+}
+
+a	{
+	color:white;
+	text-decoration: none;
+}
+
+li ul{
+    display:none;
+	list-style-type:none;
+	background-color:#484848;
+}
+
+li:hover ul{
+    display:block;
+	position: absolute;
+	
+}
+
+.mainsub	{
+	display: inline-block;
+	padding:10px;
+	background: #747474;
+	width: 100px;
+}
+		
+.sub1 {
+	margin-top:10px;
+	margin-left: -10px;
+	padding: 5px 5px;
+}
+.sub1 li	{
+	width: 110px;
+}
+
+.sub1 li:hover	{
+	background-color:#2AA9DF;
+}
+
+#google	{
+	width: 500px;
+	height: 30px;
+	text-align: center;
+	font-family: robotoslab;
+	border:1px solid #484848;
+}
+
+#navmenu	{
+	padding-left: 0px;
+}
+#secret-linkus{
+	display: inline;
+	position:absolute;
+	top:0;
+	right:0;
+}
+#secret-linkus a:hover{
+	color: pink;
+}

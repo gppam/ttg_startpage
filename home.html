@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="src/css/style2.css" />
+		<script>			
+			function clock(){
+				var time = new Date();
+				var hr = time.getHours();
+				var min = time.getMinutes();
+				var sec = time.getSeconds();
+				var ampm = " PM";
+				if (hr < 12){
+					ampm = " AM";
+				}
+				if (hr > 12){
+					hr -= 12;
+				}
+				if (hr == 0){
+					hr = 12;
+				}
+				if (hr < 10){
+					hr = " " + hr;
+				}
+				if (min < 10){
+					min = "0" + min;
+				}
+				if (sec < 10){
+					sec = "0" + sec;
+				}
+				
+				var year = time.getYear()
+				if(year < 1000){
+				year += 1900
+				}
+				var monthArray = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+				var properdate = monthArray[time.getMonth()] + " " + time.getDate() + ", " + year;
+				document.getElementById('txt').innerHTML = hr + ":" + min + " " + ampm
+				document.getElementById('date').innerHTML = properdate;
+			}
+			var arrayImg = new Array();
+			arrayImg[0] = "1.gif";
+			arrayImg[1] = "2.gif";
+			arrayImg[2] = "3.gif";
+			arrayImg[3] = "4.gif";
+			arrayImg[4] = "5.gif";
+			arrayImg[5] = "6.gif";
+			arrayImg[6] = "7.gif";
+			arrayImg[7] = "8.gif";
+			arrayImg[8] = "9.gif";
+			arrayImg[9] = "10.gif";
+			
+			function loadpic(){
+				getRandomImage(arrayImg, "");
+			}
+			
+			function getRandomImage(imgAr, path) {
+				path = path || 'src/images/';
+				var num = Math.floor( Math.random() * imgAr.length );
+				var img = imgAr[ num ];
+				var imgStr = '<img src="' + path + img + '" alt = "">';
+				document.getElementById('pic').innerHTML = imgStr;
+				document.close();
+			}
+			
+			var counter = 0;
+            window.setInterval("refreshDiv()", 500);
+            function refreshDiv(){
+				clock();
+            }
+		</script>
+	</head>
+	<body onload="loadpic()">
+		<div id="contain">
+			<div id="pic"></div>
+			<div id="linkbox">
+				<div id="txt"></div><br>
+				<div id="date"></div>
+				<br>
+				<form method='get' action='https://www.google.com/search'>
+					<input type='text' name='q' size='31' value='' autocomplete='false' autofocus='yes' id='google' placeholder='search google'>
+				</form>
+				<ul id="navmenu">
+				<li class="mainsub"><a>SOCIAL</a>
+					<ul class="sub1"> 
+						<a href="https://facebook.com/"><li>facebook</li></a>
+						<a href="https://twitter.com"><li>twitter</li></a>
+						<a href="https://pinterest.com"><li>pinterest</li></a>
+						<a href="https://gmail.com"><li>gmail</li></a>
+						<a href="https://tumblr.com/login"><li>tumblr</li></a>
+					</ul>
+				</li>
+				<li class="mainsub"><a>FUN</a>
+					<ul class="sub1">
+						<a href="https://youtube.com"><li>youtube</li></a>
+						<a href="https://zooqle.com"><li>zooqle</li></a>
+						<a href="https://gomovies.to"><li>gomovies</li></a>
+						<a href="http://readms.com"><li>mangastream</li></a>
+						<a href="http://9anime.to"><li>9anime(alt)</li></a>
+					</ul>
+				</li>
+				<li class="mainsub"><a>RES/TOOLS</a>
+					<ul class="sub1"> 
+						<a href="https://stackoverflow.com"><li>stackoverflow</li></a>
+						<a href="http://wwwhere.io"><li>wwwhere</li></a>
+						<a href="https://drive.google.com"><li>gdrive</li></a>
+						<a href="https://wetransfer.com"><li>wetransfer</li></a>
+						<a href="https://maildrop.cc"><li>maildrop</li></a>
+						<a href="http://allthefreestock.com/"><li>allthefreestock</li></a>
+					</ul>
+				</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
